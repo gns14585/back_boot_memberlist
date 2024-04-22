@@ -24,4 +24,9 @@ public class MemberService {
         return memberMapper.list();
 
     }
+
+    public Member get(Integer id) {
+        Member member = memberMapper.selectById(id);
+        return member;
+    }
 }

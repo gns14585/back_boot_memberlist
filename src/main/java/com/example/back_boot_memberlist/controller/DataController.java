@@ -34,4 +34,9 @@ public class DataController {
 
     // ---------------- 회원 상세 보기 --------------
 
+    @GetMapping("{id}")
+    public Member get(@PathVariable Integer id) {
+        return memberService.get(id);
+    }
+
 }

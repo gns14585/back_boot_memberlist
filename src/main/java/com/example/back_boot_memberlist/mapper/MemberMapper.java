@@ -27,4 +27,11 @@ public interface MemberMapper {
             FROM memberlist
             """)
     List<Member> list();
+
+    @Select("""
+            SELECT *
+            FROM memberlist
+            WHERE id = #{id}
+            """)
+    Member selectById(Integer id);
 }
