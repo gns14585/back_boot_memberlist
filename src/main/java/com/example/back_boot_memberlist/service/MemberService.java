@@ -13,8 +13,11 @@ public class MemberService {
 
     private final MemberMapper memberMapper;
 
-    public void add(Member member) {
-        memberMapper.add(member);
+    public boolean add(Member member) {
+        if (memberMapper.add(member) != 1) {
+            return false;
+        }
+        return true;
     }
 
     public List<Member> list() {

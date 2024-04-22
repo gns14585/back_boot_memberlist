@@ -20,7 +20,7 @@ public interface MemberMapper {
             #{gender}
             )
             """)
-    void add(Member member);
+    int add(Member member);
 
     @Select("""
             SELECT *
