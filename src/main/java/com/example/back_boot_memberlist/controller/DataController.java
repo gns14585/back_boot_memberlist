@@ -18,7 +18,6 @@ public class DataController {
     // ---------------- 회원 생성 ---------------
     @PostMapping("add")
     public ResponseEntity<Member> home(@RequestBody Member member) {
-        System.out.println("member = " + member);
         if (memberService.add(member)) {
             return ResponseEntity.ok(member);
         } else {
