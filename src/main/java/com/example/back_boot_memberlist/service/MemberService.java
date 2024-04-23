@@ -29,4 +29,14 @@ public class MemberService {
         Member member = memberMapper.selectById(id);
         return member;
     }
+
+    public boolean delete(Integer id) {
+        try{
+            memberMapper.del(id);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
