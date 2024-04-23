@@ -39,6 +39,16 @@ public class DataController {
     }
 
     // ---------------- 회원 수정 ----------------
+    @PutMapping("update/{id}")
+    public ResponseEntity<?> update(@RequestBody Member member) {
+        if (member.getEmail() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email cannot be null");
+        }
+        if (memberService.update(member)) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.internalServerError().build();
+    }
 
 
     // ---------------- 회원 삭제 ----------------

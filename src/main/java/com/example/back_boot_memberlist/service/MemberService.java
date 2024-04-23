@@ -39,4 +39,15 @@ public class MemberService {
             return false;
         }
     }
+
+    public boolean update(Member member) {
+        try {
+            memberMapper.update(member);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }

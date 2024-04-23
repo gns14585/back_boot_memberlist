@@ -1,10 +1,7 @@
 package com.example.back_boot_memberlist.mapper;
 
 import com.example.back_boot_memberlist.domain.Member;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -41,4 +38,15 @@ public interface MemberMapper {
             WHERE id = #{id}
             """)
     int del(Integer id);
+
+    @Update("""
+            UPDATE memberlist
+            SET
+                email = #{email},
+                phone = #{phone},
+                birthday = #{birthday},
+                gender = #{gender}
+            WHERE id = #{id}
+            """)
+    int update(Member member);
 }
